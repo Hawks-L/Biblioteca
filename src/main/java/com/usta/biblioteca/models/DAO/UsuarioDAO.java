@@ -13,9 +13,9 @@ public interface UsuarioDAO extends CrudRepository<UsuarioEntity,Long> {
     @Transactional
     @Modifying
     @Query("UPDATE UsuarioEntity SET estadoUsuario=false WHERE idUsuario=?1")
-    public void changeState(long idUsuario);
+    public void changeState(Long idUsuario);
 
     @Transactional
-    @Query("SELECT AU from UsuarioEntity AU WHERE AU.email=?1")
-    public UsuarioEntity viewDetail(long email);
+    @Query("SELECT us from UsuarioEntity us WHERE us.email=?1")
+    public UsuarioEntity findByEmail(String email);
 }
