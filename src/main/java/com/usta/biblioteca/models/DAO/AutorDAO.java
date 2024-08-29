@@ -14,6 +14,6 @@ public interface AutorDAO extends CrudRepository<AutorEntity,Long> {
     public void changeState(Long idAutor);
 
     @Transactional
-    @Query("SELECT AU from AutorEntity AU WHERE AU.idAutor")
+    @Query("SELECT AU from AutorEntity AU WHERE AU.idAutor =?1")
     public AutorEntity viewDetail(Long idAutor);
 }

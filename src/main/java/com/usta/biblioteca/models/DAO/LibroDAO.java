@@ -15,6 +15,6 @@ public interface LibroDAO extends CrudRepository<LibroEntity,Long> {
     public void changeState(Long idLibro);
 
     @Transactional
-    @Query("SELECT AU from LibroEntity AU WHERE AU.libro")
+    @Query("SELECT lib from LibroEntity lib WHERE lib.idLibro=?1")
     public LibroEntity viewDetail(Long idLibro);
 }

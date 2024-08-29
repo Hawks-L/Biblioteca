@@ -41,5 +41,5 @@ public class AutorEntity implements Serializable {
 
     @NotNull
     @Column(name = "estado_autor", columnDefinition = "boolean", nullable = false)
-    private boolean estadoAutor;
+    private Boolean estadoAutor;
 }
